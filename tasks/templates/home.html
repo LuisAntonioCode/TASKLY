@@ -1,0 +1,23 @@
+<!-- Pagina de inicio -->
+{% extends 'base.html' %} <!-- Hereda de la página base -->
+
+{% block content %}
+    <main class="container py-5" >
+        <section class="card card-body">
+            <h1 class="display-2 text-center">Bienvenidos a Taskly</h1>
+            <p>Taskly es tu herramienta ideal para organizar y gestionar tus tareas diarias de manera sencilla y eficiente. Con una interfaz intuitiva, podrás crear, priorizar y monitorear tus pendientes, asegurándote de que nada quede fuera de tu control. Ya sea que necesites planificar tus actividades personales o laborales, Taskly te ofrece todo lo que necesitas para mantenerte enfocado y productivo. ¡Simplifica tu vida y alcanza tus metas con nosotros!</p>
+            <div class="text-center">
+                <a class="btn btn-secondary" href="/signin/"> 
+                    Iniciar sesión
+                </a>
+                <a class="btn btn-dark" href="/signup/">
+                    Crear cuenta 
+                </a>
+            </div>
+        </section>
+    </main>
+
+    
+
+{% endblock %}
+

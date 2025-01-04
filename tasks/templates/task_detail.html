@@ -1,0 +1,40 @@
+<!-- Pagina de los detalles de las tareas -->
+{% extends 'base.html' %} <!-- Hereda de la página base -->
+
+{% block content %}
+<main class="container">
+    <div class="row">
+        <div class="col-md-4 offset-md-4 py-4">
+            <h1 class="text-secondary text-center" >{{task.title}}</h1>
+            {{error}}
+
+            <!-- Actualizar tareas y obtener tareas -->
+            <form action="" method="post">
+                {% csrf_token %} <!-- token de seguridad -->
+                {{form.as_p}} <!-- Se muestra el formulario con los datos de la tarea -->
+                <button class="btn btn-primary">
+                    Actualizar
+                </button>
+            </form>
+
+            <div class="mt-2 d-flex"> 
+                <!-- Marcar como completada la tarea -->
+                <form action="{% url 'complete_task' task.id %}" method="POST">
+                    {% csrf_token %} <!-- token de seguridad -->
+                    <button class="btn btn-secondary">
+                        Completada
+                    </button">
+                </form>
+                <!-- Eliminar tareas -->
+                <form action="{% url 'delete_task' task.id %}" method="POST">
+                    {% csrf_token %} <!-- token de seguridad -->
+                    <button class="btn btn-danger">
+                        Eliminar
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

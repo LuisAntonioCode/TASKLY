@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main class="container py-5">
+    <section class="card card-body">
+        <h1 class="display-2 text-center">Bienvenido/a a Taskly</h1>
+        <p>Querido/a <strong>{{user.username}}</strong> en Taskly tienes todo lo que necesitas para mantener tus tareas bajo control. Revisa tus pendientes, añade nuevas tareas y marca como completadas aquellas que ya hayas finalizado. Recuerda que con Taskly, tu productividad está siempre al máximo, ayudándote a alcanzar tus objetivos de forma más organizada y eficiente. ¡Sigue avanzando hacia tus metas!</p>
+        
+        <div class="text-center">
+            <a class="btn btn-primary" href="/tasks/create/">
+                Crear tarea
+            </a>
+        </div>
+    </section>
+
+</main>
+
+{% endblock %}

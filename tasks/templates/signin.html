@@ -1,0 +1,31 @@
+<!-- Pagina de inicio de sesion -->
+
+{% extends 'base.html' %} <!-- Hereda de la página base -->
+
+{% block content %}
+
+    <main class="container">
+        <div class="row">
+            <section class="col-md-4 offset-md-4 mt-5">
+                <form action="/signin/" method="post" class="card card-body"> 
+                    <h1 class="text-center display-5" >Inicio de sesión</h1>
+                    {{error}}
+                    {% csrf_token %} <!-- token de seguridad -->
+
+                    <div class="mb-3">
+                        <label for="username">Usuario:</label>
+                        <input required type="text" id="username" name="username" placeholder="Escribe tu nombre de usuario" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="password">Contraseña:</label>
+                        <input required type="password" id="password" name="password" placeholder="Escribe tu contraseña" class="form-control">
+                    </div> 
+                    <button class="btn btn-primary">
+                        Iniciar sesion
+                    </button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+{% endblock %}

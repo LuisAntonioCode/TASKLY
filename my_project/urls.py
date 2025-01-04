@@ -16,7 +16,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from tasks import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.home, name='home'), # url de la página de inicio
+    path('home_task/', views.home_task, name='home_task'), # url de la página de inicio del usuario autentificado
+    path('signup/', views.signup, name='signup'), # url de la página de registro
+    path('tasks/', views.tasks, name='tasks'), # url de la página para mostrar tareas pendientes
+    path('tasks_completed/', views.tasks_completed, name='tasks_completed'), # url de la página para mostrar tareas completadas
+    path('tasks/create/', views.create_task, name='create_task'), # url para crear tareas 
+    path('tasks/<int:task_id>/', views.task_detail, name='task_detail'), # url para obtener una tarea y actualizar una tarea
+    path('tasks/<int:task_id>/complete/', views.complete_task, name='complete_task'), # url para marcar una tarea como completada
+    path('tasks/<int:task_id>/delete/', views.delete_task, name='delete_task'), # url para eliminar una tarea
+    path('logout/', views.signout, name='logout'), # url para cerrar sesión
+    path('signin/', views.signin, name='signin'), # url para iniciar sesión
+    path('delete_user/', views.delete_user, name='delete_user'),  # URL para eliminar usuario
 ]
